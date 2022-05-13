@@ -1,0 +1,29 @@
+{
+  "name": "202204-w6chwe-mariam-lliso-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iammariamdev/202204-W6CHWE-mariam-lliso-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iammariamdev/202204-W6CHWE-mariam-lliso-backend/issues"
+  },
+  "homepage": "https://github.com/iammariamdev/202204-W6CHWE-mariam-lliso-backend#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.1.0"
+  }
+}
