@@ -16,7 +16,7 @@ const connectionToDatabase = ({ username, password, database }) => {
           reject();
         }
 
-        debug("Connected to database");
+        debug(chalk.greenBright("Connected to database"));
         resolve();
       });
     });

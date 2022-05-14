@@ -1,11 +1,11 @@
-const debug = require("debug")("robots:api-initialize:root");
+const debug = require("debug")("robots-api:initialize-server");
 const chalk = require("chalk");
 const app = require("./index");
 
 const initializeServer = (port) => {
-  const connectionPromise = new Promise();
+  let initializeServerPromise = null;
   try {
-    connectionPromise((resolve, reject) => {
+    initializeServerPromise = new Promise((resolve, reject) => {
       const server = app.listen(port, () => {
         debug(chalk.greenBright(`server running on port: ${port}`));
         resolve();
@@ -22,6 +22,8 @@ const initializeServer = (port) => {
   } catch (error) {
     debug(chalk.red("Error at connectionPromise: ", error.message));
   }
+
+  return initializeServerPromise;
 };
 
 module.exports = initializeServer;
