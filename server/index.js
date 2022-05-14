@@ -1,11 +1,14 @@
 const express = require("express");
 const morgan = require("morgan");
 const { notFoundError, generalError } = require("./middlewares/errors");
+const robotsRouter = require("./routers/robotsRouters");
 
 const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use(robotsRouter);
 
 app.use(notFoundError);
 app.use(generalError);
