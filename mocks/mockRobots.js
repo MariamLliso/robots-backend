@@ -17,4 +17,15 @@ const mockRobots = [
   },
 ];
 
-module.exports = { mockRobots };
+const mockRobot = [
+  {
+    _id: "627fa3a6acf0547ab56a505f",
+    name: "K-9",
+    image: "https://i.imgur.com/S8eJabl.png",
+    speed: 10,
+    resistance: 10,
+    creationDate: new Date(),
+  },
+];
+
+module.exports = { mockRobots, mockRobot };

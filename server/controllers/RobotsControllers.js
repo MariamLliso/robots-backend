@@ -5,4 +5,11 @@ const getRobots = async (req, res) => {
   res.status(200).json({ robots });
 };
 
-module.exports = { getRobots };
+const deleteRobot = async (req, res) => {
+  const { idRobot } = req.params;
+  const robot = await Robot.findById(idRobot);
+  await Robot.findByIdAndDelete(idRobot);
+  res.status(200).json({ robot });
+};
+
+module.exports = { getRobots, deleteRobot };
