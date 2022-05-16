@@ -3,7 +3,7 @@ const { getRobots, deleteRobot } = require("../controllers/RobotsControllers");
 
 const robotsRouter = express.Router();
 
-robotsRouter.get("/robots", getRobots);
-robotsRouter.delete("/robots/:idRobot", deleteRobot);
+robotsRouter.get("/", getRobots);
+robotsRouter.delete("/delete/:idRobot", deleteRobot);
 
 module.exports = robotsRouter;
