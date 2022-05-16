@@ -5,7 +5,7 @@ jest.mock("../../db/models/Robot", () => ({
   ...jest.requireActual("../../db/models/Robot"),
   find: jest.fn().mockResolvedValue(mockRobots),
   findById: jest.fn().mockResolvedValue(mockRobot),
-  findByIdAndDelete: jest.fn().mockResolvedValue([]),
+  findByIdAndDelete: jest.fn().mockResolvedValue("627fa3a6acf0547ab56a505f"),
 }));
 
 describe("Given a getRobot function", () => {
@@ -58,7 +58,8 @@ describe("Given a deleteRobot function", () => {
     test("Then it should call the response json method with a robot", async () => {
       await deleteRobot(req, res);
 
-      expect(res.json).toHaveBeenCalledWith({ robot: mockRobot });
+      // eslint-disable-next-line no-underscore-dangle
+      expect(res.json).toHaveBeenCalledWith({ _id: mockRobot[0]._id });
     });
   });
 });
