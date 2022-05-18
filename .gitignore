@@ -4,3 +4,4 @@ node_modules
 mongodb
 *.mongodb
 coverage
+.vscode

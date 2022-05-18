@@ -1,3 +1,4 @@
+require("dotenv").config();
 const debug = require("debug")("robots:middlewares:auth");
 const chalk = require("chalk");
 const jwt = require("jsonwebtoken");
@@ -24,4 +25,4 @@ const auth = (req, res, next) => {
   }
 };
 
-module.export = auth;
+module.exports = auth;
