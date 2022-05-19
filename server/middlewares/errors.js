@@ -7,8 +7,11 @@ const notFoundError = (req, res) => {
 
 // eslint-disable-next-line no-unused-vars
 const generalError = (error, req, res, next) => {
-  debug(chalk.red(error.message));
-  res.status(500).json({ msg: "Server error" });
+  const statusCode = error.statusCode ?? 500;
+  const errorMessage = error.statusCode ? error.message : "General error";
+  debug(chalk.red(`${statusCode}: ${errorMessage}`));
+
+  res.status(statusCode).json(errorMessage);
 };
 
 module.exports = { notFoundError, generalError };
